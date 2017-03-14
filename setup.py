@@ -1,6 +1,6 @@
 from setuptools import setup
 
-execfile('galleries/version.py')
+exec(compile(open('galleries/version.py', "rb").read(), 'galleries/version.py', 'exec'))
 
 setup(
     name = 'django-galleries',
