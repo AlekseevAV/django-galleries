@@ -2,7 +2,7 @@ from respite import Views, Resource
 from respite.utils import generate_form
 from django.http import HttpResponse
 
-from models import Gallery, Image
+from .models import Gallery, Image
 
 class GalleryViews(Views, Resource):
     supported_formats = ['json']

@@ -16,7 +16,7 @@ setup(
         'easy_thumbnails', 
         'django-respite>=1.2.0',
         'easy_thumbnails',
-        'PIL',
+        # 'PIL',
         'django-orderable',
         'django-image-cropping'
     ],

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from orderable.admin import OrderableTabularInline
 
-from models import Gallery, Image
+from .models import Gallery, Image
 
 class ImageInline(OrderableTabularInline):
     model = Image

@@ -1,6 +1,6 @@
 from django.db import models
 
-from widgets import GalleryForeignKeyWidget
+from .widgets import GalleryForeignKeyWidget
 
 class GalleryForeignKey(models.ForeignKey):
     """

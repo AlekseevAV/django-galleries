@@ -1,9 +1,9 @@
 from respite.urls import resource, routes
 
-from views import GalleryViews, ImageViews
+from .views import GalleryViews, ImageViews
 
 urlpatterns = resource(
-    prefix = '/galleries/',
+    prefix = 'galleries/',
     views = GalleryViews,
     routes = [
         routes.route(
@@ -28,7 +28,7 @@ urlpatterns = resource(
 )
 
 urlpatterns += resource(
-    prefix = '/galleries/',
+    prefix = 'galleries/',
     views = ImageViews,
     routes = [
         routes.route(

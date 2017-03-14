@@ -1,6 +1,7 @@
 import logging
 
-from django.db.models import get_model, ObjectDoesNotExist
+from django.db.models import ObjectDoesNotExist
+from django.apps import apps
 from django.contrib.admin.widgets import ForeignKeyRawIdWidget
 from django.utils.safestring import mark_safe
 
@@ -58,8 +59,8 @@ class GalleryForeignKeyWidget(ForeignKeyRawIdWidget, GalleryWidget):
             app_name = self.rel.to._meta.app_label
             model_name = self.rel.to._meta.object_name.lower()
             try:
-                gallery = get_model(app_name, model_name
-                    ).objects.get(pk=value)
+                model = apps.get_model(app_name, model_name)
+                gallery = model.objects.get(pk=value)
             except ObjectDoesNotExist:
                 logger.error("Can't find object: %s.%s with primary key %s "
                     "for displaying gallery." % (app_name, model_name, value))
